@@ -1,10 +1,9 @@
 const db_config = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 
-const db = new Sequelize('cml-app', 'root', '', {
-    host: 'localhost',
+const db = new Sequelize(db_config.DB, db_config.USER, db_config.PASSWORD, {
+    host: db_config.HOST,
     dialect: 'mysql',
-    operatorsAliases: false,
     pool: {
         max: 5,
         min: 0,
